@@ -6,6 +6,7 @@ import { useState } from "react";
 
 export default function Marketplace() {
 const sampleData = [
+    // this is like a list of object and you cannot call direclt a object variable to display them. 
     {
         "name": "NFT#1",
         "description": "Alchemy's First NFT",
@@ -34,6 +35,7 @@ const sampleData = [
         "address":"0xe81Bf5A757C4f7F82a2F23b1e59bE45c33c5b13",
     },
 ];
+
 const [data, updateData] = useState(sampleData);
 
 return (
@@ -43,6 +45,8 @@ return (
             <div className="md:text-xl font-bold text-white">
                 Top NFTs
             </div>
+            {/**This is just a comment practise in JSX */}
+            {/** Here the data is be */}
             <div className="flex mt-5 justify-between flex-wrap max-w-screen-xl text-center">
                 {data.map((value, index) => {
                     return <NFTTile data={value} key={index}></NFTTile>;

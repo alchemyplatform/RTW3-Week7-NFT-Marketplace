@@ -31,6 +31,17 @@ const [currAddress, updateAddress] = useState('0x');
           </li>
           <li className='w-2/6'>
             <ul className='lg:flex justify-between font-bold mr-10 text-lg'>
+              {/**Okay here i am trying to add Dashbaord */}
+              {location.pathname === "/dashboard" ? 
+              <li className='border-b-2 hover:pb-0 p-2'>
+                <Link to="/dashBoard">Dashboard</Link>
+              </li>
+              :
+              <li className='hover:border-b-2 hover:pb-0 p-2'>
+                <Link to="/dashBoard">Dashboard</Link>
+              </li>              
+              }
+              {/**The above is the added Dashboard */}
               {location.pathname === "/" ? 
               <li className='border-b-2 hover:pb-0 p-2'>
                 <Link to="/">Marketplace</Link>
