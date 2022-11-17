@@ -18,9 +18,9 @@ module.exports = {
       chainId: 1337
     },
     goerli: {
-      url: "",
+      url: "<>",
       accounts: [ 
-        "" 
+        "<>" 
       ]
     }
   },

@@ -11,6 +11,7 @@ import {
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 
+
 function Navbar() {
 
 const [connected, toggleConnect] = useState(false);

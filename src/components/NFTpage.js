@@ -12,6 +12,7 @@ const [dataFetched, updateDataFetched] = useState(false);
 const [message, updateMessage] = useState("");
 const [currAddress, updateCurrAddress] = useState("0x");
 
+
 async function getNFTData(tokenId) {
     const ethers = require("ethers");
     //After adding your Hardhat network to your metamask, this code will get providers and signers

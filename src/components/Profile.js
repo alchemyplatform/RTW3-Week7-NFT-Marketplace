@@ -11,6 +11,7 @@ export default function Profile () {
     const [address, updateAddress] = useState("0x");
     const [totalPrice, updateTotalPrice] = useState("0");
 
+    
     async function getNFTData(tokenId) {
         const ethers = require("ethers");
         let sumPrice = 0;
