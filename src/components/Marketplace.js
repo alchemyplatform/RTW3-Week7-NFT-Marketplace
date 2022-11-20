@@ -42,7 +42,7 @@ return (
     <div>
         <Navbar></Navbar>
         <div className="flex flex-col place-items-center mt-20">
-            <div className="md:text-xl font-bold text-white">
+            <div className="md:text-xl font-bold text-black">
                 Top NFTs
             </div>
             {/**This is just a comment practise in JSX */}
