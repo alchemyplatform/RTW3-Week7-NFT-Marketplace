@@ -13,6 +13,8 @@ import Marketplace from './components/Marketplace';
 import Profile from './components/Profile';
 import NFTPage from './components/NFTpage';
 import DashBoard from './components/DashBoard';
+import "semantic-ui-css/semantic.min.css";
+
 
 // element with id of root is getting the content of the file .
 //index.js kind a kickstart our application as it is rendering what even it is in the app.js
