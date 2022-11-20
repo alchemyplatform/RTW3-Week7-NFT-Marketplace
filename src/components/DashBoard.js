@@ -13,6 +13,7 @@ export default function DashBoard () {
     
     return (
         <>
+        <h1> Hello world</h1>
         <Navbar></Navbar>
           <div className="ui placeholder segment index-about second-segment">
             <div className="ui stackable center aligned four column grid">
