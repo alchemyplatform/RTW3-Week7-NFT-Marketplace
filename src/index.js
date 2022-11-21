@@ -1,34 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
-import SellNFT from './components/SellNFT';
-import Marketplace from './components/Marketplace';
-import Profile from './components/Profile';
-import NFTPage from './components/NFTpage';
-import DashBoard from './components/DashBoard';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SellNFT from "./components/SellNFT";
+import Marketplace from "./components/Marketplace";
+import Profile from "./components/Profile";
+import NFTPage from "./components/NFTpage";
+import DashBoard from "./components/DashBoard";
 import "semantic-ui-css/semantic.min.css";
-
 
 // element with id of root is getting the content of the file .
 //index.js kind a kickstart our application as it is rendering what even it is in the app.js
-// the root is the id of the root div in the index.html file 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// the root is the id of the root div in the index.html file
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Marketplace />}/>
-        <Route path="/sellNFT" element={<SellNFT />}/> 
-        <Route path="/nftPage/:tokenId" element={<NFTPage />}/>        
-        <Route path="/profile" element={<Profile />}/> 
-        <Route path="/dashBoard" element={<DashBoard/>}/>
+        <Route path="/" element={<Marketplace />} />
+        <Route path="/sellNFT" element={<SellNFT />} />
+        <Route path="/nftPage/:tokenId" element={<NFTPage />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/dashBoard" element={<DashBoard />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
