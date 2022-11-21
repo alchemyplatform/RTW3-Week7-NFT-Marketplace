@@ -4,7 +4,7 @@ This code is for the Tutorial [Build your own NFT Marketplace from Scratch](http
 
 To set up the repository and run the marketplace locally, run the below
 
-Also this is a test branch, so all the updates are needed to push to this branch first
+
 
 ```bash
 git clone https://github.com/OMGWINNING/NFT-Marketplace-Tutorial
