@@ -18,9 +18,9 @@ module.exports = {
       chainId: 1337,
     },
     goerli: {
-      url: "https://eth-goerli.g.alchemy.com/v2/AFg44fwI4dzYHzJ-Cy4Oli-y9-Ds50oQ",
+      url: "",
       accounts: [
-        "9cb0917e1b96ca4ad5d6334acdcb7d8fafb77e2dbf529951fd50e62e8d96955a",
+        "",
       ],
     },
   },
