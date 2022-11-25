@@ -1,0 +1,37 @@
+.card-grp{
+    display: flex;
+}
+.card{
+    max-width: 300px;
+}
+.card-grp .card:not(:last-child){
+    margin-right: 20px;
+}
+.card-images__banner img{
+    max-width: 100%;
+    height: auto;
+}
+
+.card-image__logo-box{
+    top: 80px;
+    border: 1px solid #d5d5d5;
+    border-radius: 50%;
+    max-width: 118px;
+    height: 120px;
+    /* background: gray; */
+    position: absolute;
+    left: 28%;
+    overflow: hidden;
+}
+
+.card-image__logo-box img{
+    max-width: 118px;
+    height: 100%;
+    
+}
+
+.card-content{
+    margin-top: 50px;
+    padding: 10px;
+    text-align: center;
+}

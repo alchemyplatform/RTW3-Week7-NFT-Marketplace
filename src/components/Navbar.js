@@ -21,7 +21,7 @@ function Navbar() {
       <nav className="w-screen">
         <ul className="flex items-end justify-between py-3 bg-transparent text-white pr-5">
           <li className="flex items-end ml-5 pb-2">
-            <Link to="/">
+            <Link to="/dashBoard">
               <img
                 src={fullLogo}
                 alt=""
@@ -37,7 +37,7 @@ function Navbar() {
           <li className="w-2/6">
             <ul className="lg:flex justify-between font-bold mr-10 text-lg">
               {/**Okay here i am trying to add Dashbaord */}
-              {location.pathname === "/dashboard" ? (
+              {location.pathname === "/dashBoard" ? (
                 <li className="border-b-2 hover:pb-0 p-2">
                   <Link to="/dashBoard">Dashboard</Link>
                 </li>
@@ -49,20 +49,20 @@ function Navbar() {
               {/**The above is the added Dashboard */}
               {location.pathname === "/" ? (
                 <li className="border-b-2 hover:pb-0 p-2">
-                  <Link to="/">Collection</Link>
+                  <Link to="/innerCollection">Collection</Link>
                 </li>
               ) : (
                 <li className="hover:border-b-2 hover:pb-0 p-2">
-                  <Link to="/">Marketplace</Link>
+                  <Link to="/innerCollection">Collection</Link>
                 </li>
               )}
               {location.pathname === "/sellNFT" ? (
-                <li className="border-b-2 hover:pb-0 p-2">
-                  <Link to="/sellNFT">List My NFT</Link>
+                <li className="border-b-3 hover:pb-0 p-2">
+                  <Link to="/sellNFT"> My_NFT</Link>
                 </li>
               ) : (
                 <li className="hover:border-b-2 hover:pb-0 p-2">
-                  <Link to="/sellNFT">List My NFT</Link>
+                  <Link to="/sellNFT"> My_NFT</Link>
                 </li>
               )}
               {location.pathname === "/profile" ? (

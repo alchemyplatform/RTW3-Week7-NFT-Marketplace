@@ -10,6 +10,8 @@ import Profile from "./components/Profile";
 import NFTPage from "./components/NFTpage";
 import DashBoard from "./components/DashBoard";
 import "semantic-ui-css/semantic.min.css";
+import InnerCollection from "./components/InnerCollection";
+import InnerNfts from "./components/InnerNFts";
 
 // element with id of root is getting the content of the file .
 //index.js kind a kickstart our application as it is rendering what even it is in the app.js
@@ -24,6 +26,8 @@ root.render(
         <Route path="/nftPage/:tokenId" element={<NFTPage />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/dashBoard" element={<DashBoard />} />
+        <Route path="/innerCollection" element={<InnerCollection />} />
+        <Route path="/innerNfts/:tokenId" element={<InnerNfts />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

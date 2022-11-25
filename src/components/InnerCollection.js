@@ -1,15 +1,15 @@
 import Navbar from "./Navbar";
 import NFTTile from "./NFTTile";
-import InnerCollectionNFTtile from "./InnerCollectionNFTtile";
 import MarketplaceJSON from "../Marketplace.json";
 import axios from "axios";
 import { useState } from "react";
+import InnerCollectionNFTtile from "./InnerCollectionNFTtile";
 
-export default function Marketplace() {
+export default function InnerCollection() {
   const sampleData = [
     // this is like a list of object and you cannot call direclt a object variable to display them.
     {
-      name: "NFT#1",
+      name: "NFT#5",
       description: "Alchemy's First NFT",
       website: "http://axieinfinity.io",
       image:
@@ -19,7 +19,7 @@ export default function Marketplace() {
       address: "0xe81Bf5A757CB4f7F82a2F23b1e59bE45c33c5b13",
     },
     {
-      name: "NFT#2",
+      name: "NFT#6",
       description: "Alchemy's Second NFT",
       website: "http://axieinfinity.io",
       image:
@@ -29,7 +29,7 @@ export default function Marketplace() {
       address: "0xe81Bf5A757C4f7F82a2F23b1e59bE45c33c5b13",
     },
     {
-      name: "NFT#3",
+      name: "NFT#7",
       description: "Alchemy's Third NFT",
       website: "http://axieinfinity.io",
       image:
@@ -39,7 +39,7 @@ export default function Marketplace() {
       address: "0xe81Bf5A757C4f7F82a2F23b1e59bE45c33c5b13",
     },
     {
-      name: "NFT#4",
+      name: "NFT#8",
       description: "Alchemy's Third NFT",
       website: "http://axieinfinity.io",
       image:
@@ -61,16 +61,17 @@ export default function Marketplace() {
         {/** Here the data is be */}
         <div className="flex mt-5 justify-between flex-wrap max-w-screen-xl text-center">
           {data.map((value, index) => {
-            return <>
-            
-            <InnerCollectionNFTtile data={value} key={index}></InnerCollectionNFTtile>
-            
-            
-            </>
+            return (
+              <>
+                <InnerCollectionNFTtile
+                  data={value}
+                  key={index}></InnerCollectionNFTtile>
+              </>
+            );
             {
               /**THis is the real one i am just trying to add some of my content */
-              /**<NFTTile data={value} key={index}></NFTTile>;*/}
-
+              /**<NFTTile data={value} key={index}></NFTTile>;*/
+            }
           })}
         </div>
       </div>

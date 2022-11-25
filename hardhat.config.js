@@ -1,6 +1,6 @@
 require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-ethers");
-const fs = require('fs');
+const fs = require("fs");
 // const infuraId = fs.readFileSync(".infuraid").toString().trim() || "";
 
 task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
@@ -15,20 +15,22 @@ module.exports = {
   defaultNetwork: "hardhat",
   networks: {
     hardhat: {
-      chainId: 1337
+      chainId: 1337,
     },
     goerli: {
-      url: "<YOUR_ALCHEMY_URL>",
-      accounts: [ "<YOUR_PRIVATE_KEY>" ]
-    }
+      url: "https://eth-goerli.g.alchemy.com/v2/AFg44fwI4dzYHzJ-Cy4Oli-y9-Ds50oQ",
+      accounts: [
+        "9cb0917e1b96ca4ad5d6334acdcb7d8fafb77e2dbf529951fd50e62e8d96955a",
+      ],
+    },
   },
   solidity: {
     version: "0.8.4",
     settings: {
       optimizer: {
         enabled: true,
-        runs: 200
-      }
-    }
-  }
+        runs: 200,
+      },
+    },
+  },
 };

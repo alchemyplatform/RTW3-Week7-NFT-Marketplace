@@ -1,10 +1,16 @@
 import axie from "../tile.jpeg";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
-function NFTTile(data) {
+function InnerCollectionNFTtile2(data) {
   const newTo = {
     pathname: "/nftPage/" + data.data.tokenId,
   };
+
+  //modified content
+
+  // const newPthforinnercollection = {
+  //   pathname: "/innerNfts/" + data.data.tokenId,
+  // };
 
   return (
     <Link to={newTo}>
@@ -23,4 +29,4 @@ function NFTTile(data) {
   );
 }
 
-export default NFTTile;
+export default InnerCollectionNFTtile2;
