@@ -12,15 +12,24 @@ import DashBoard from "./components/DashBoard";
 import "semantic-ui-css/semantic.min.css";
 import InnerCollection from "./components/InnerCollection";
 import InnerNfts from "./components/InnerNFts";
+// Need to ask asim why we are having the routes in the index.js instead of just app.js
+import SignIn from "./components/Signin";
+import SignUp from "./components/Signup";
+import Account from "./components/Account";
 
 // element with id of root is getting the content of the file .
 //index.js kind a kickstart our application as it is rendering what even it is in the app.js
 // the root is the id of the root div in the index.html file
+
+//this is the way to write the reactdom version 18
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/account" element={<Account />} />
         <Route path="/" element={<Marketplace />} />
         <Route path="/sellNFT" element={<SellNFT />} />
         <Route path="/nftPage/:tokenId" element={<NFTPage />} />

@@ -5,6 +5,17 @@ import axios from "axios";
 import { useState } from "react";
 import InnerCollectionNFTtile from "./InnerCollectionNFTtile";
 import InnerCollectionNFTtile2 from "./InnerCollectionNFTtile2";
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams,
+  Navigate,
+  useNavigate,
+} from "react-router-dom";
 // this function is modified to taked the props
 export default function InnerNfts() {
   const sampleData = [
@@ -33,11 +44,22 @@ export default function InnerNfts() {
 
   const [data, updateData] = useState(sampleData);
 
+  let navigate = useNavigate();
+  const sendToForm = () => {
+    let path = `/sellNFT`;
+    navigate(path);
+  };
+
   return (
     <div>
       <Navbar></Navbar>
       <>
         <div className="flex flex-col place-items-center mt-20">
+          <button
+            className="createNewCollection bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-sm"
+            onClick={sendToForm}>
+            Create NFTs
+          </button>
           <div className="md:text-xl font-bold text-black">
             NFT Certificates for Collection 1
           </div>

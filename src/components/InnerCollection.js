@@ -4,6 +4,16 @@ import MarketplaceJSON from "../Marketplace.json";
 import axios from "axios";
 import { useState } from "react";
 import InnerCollectionNFTtile from "./InnerCollectionNFTtile";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams,
+  Navigate,
+  useNavigate,
+} from "react-router-dom";
 
 export default function InnerCollection() {
   const sampleData = [
@@ -52,10 +62,22 @@ export default function InnerCollection() {
 
   const [data, updateData] = useState(sampleData);
 
+  let navigate = useNavigate();
+  const sendToForm = () => {
+    let path = `/sellNFT`;
+    navigate(path);
+  };
+
   return (
     <div>
       <Navbar></Navbar>
+
       <div className="flex flex-col place-items-center mt-20">
+        <button
+          className="createNewCollection  place-content-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-sm"
+          onClick={sendToForm}>
+          Create Collection
+        </button>
         <div className="md:text-xl font-bold text-black">NFT Certificates</div>
         {/**This is just a comment practise in JSX */}
         {/** Here the data is be */}

@@ -9,6 +9,11 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import InnerCollection from "./components/InnerCollection";
 import InnerNfts from "./components/InnerNFts";
+import SignIn from "./components/Signin";
+import SignUp from "./components/Signup";
+import Account from "./components/Account";
+import reportWebVitals from "./reportWebVitals";
+//import { MoralisProvider } from "react-moralis";
 //this is the root component and inside this component is returns the App method with routes to differnt pages.
 
 function App() {
@@ -16,6 +21,9 @@ function App() {
     // this is JSX, the bubble will conver the JSX to HTML and renders to the DOM.
     <div className="container">
       <Routes>
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/account" element={<Account />} />
         <Route path="/" element={<Marketplace />} />
         <Route path="/nftPage" element={<NFTPage />} />
         <Route path="/profile" element={<Profile />} />
@@ -25,6 +33,7 @@ function App() {
         <Route path="/innerNfts" element={<InnerNfts />} />
       </Routes>
     </div>
+
     // the difference between JSX and HTML is that we cannot just use class , we have to use
     // className for the id parameter.
     // class is a reserved keyboard in react and this will changes the className into class in the page of the

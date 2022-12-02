@@ -74,6 +74,15 @@ function Navbar() {
                   <Link to="/profile">Profile</Link>
                 </li>
               )}
+              {location.pathname === "/signUp" ? (
+                <li className="border-b-2 hover:pb-0 p-2">
+                  <Link to="/signup">SignUp</Link>
+                </li>
+              ) : (
+                <li className="hover:border-b-2 hover:pb-0 p-2">
+                  <Link to="/signup">SignUp</Link>
+                </li>
+              )}
               <li>
                 <button className="enableEthereumButton bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-sm">
                   {connected ? "Connected" : "Connect Wallet"}
