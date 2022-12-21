@@ -13,9 +13,9 @@ import { useLocation } from 'react-router';
 
 function Navbar() {
 
-const [connected, toggleConnect] = useState(false);
-const location = useLocation();
-const [currAddress, updateAddress] = useState('0x');
+  const [connected, toggleConnect] = useState(false);
+  const location = useLocation();
+  const [currAddress, updateAddress] = useState('0x');
 
     return (
       <div className="">
