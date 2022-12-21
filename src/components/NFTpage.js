@@ -7,9 +7,9 @@ import { useState } from "react";
 
 export default function NFTPage (props) {
 
-const [data, updateData] = useState({});
-const [message, updateMessage] = useState("");
-const [currAddress, updateCurrAddress] = useState("0x");
+    const [data, updateData] = useState({});
+    const [message, updateMessage] = useState("");
+    const [currAddress, updateCurrAddress] = useState("0x");
 
     return(
         <div style={{"min-height":"100vh"}}>
