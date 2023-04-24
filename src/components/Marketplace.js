@@ -3,6 +3,7 @@ import NFTTile from "./NFTTile";
 import MarketplaceJSON from "../Marketplace.json";
 import axios from "axios";
 import { useState } from "react";
+import { GetIpfsUrlFromPinata } from "../utils";
 
 export default function Marketplace() {
 const sampleData = [
