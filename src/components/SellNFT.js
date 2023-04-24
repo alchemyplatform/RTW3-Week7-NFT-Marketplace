@@ -30,12 +30,12 @@ export default function SellNFT () {
                     <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" placeholder="Min 0.01 ETH" step="0.01" value={formParams.price} onChange={e => updateFormParams({...formParams, price: e.target.value})}></input>
                 </div>
                 <div>
-                    <label className="block text-purple-500 text-sm font-bold mb-2" htmlFor="image">Upload Image</label>
+                    <label className="block text-purple-500 text-sm font-bold mb-2" htmlFor="image">Upload Image (&lt;500 KB)</label>
                     <input type={"file"} onChange={""}></input>
                 </div>
                 <br></br>
-                <div className="text-green text-center">{message}</div>
-                <button onClick={""} className="font-bold mt-10 w-full bg-purple-500 text-white rounded p-2 shadow-lg">
+                <div className="text-red-500 text-center">{message}</div>
+                <button onClick={""} className="font-bold mt-10 w-full bg-purple-500 text-white rounded p-2 shadow-lg" id="list-button">
                     List NFT
                 </button>
             </form>
