@@ -26,13 +26,19 @@ contract NFTMarketplace is ERC721URIStorage {
         bool currentlyListed;
     }
 
-    mapping(uint256 => ListedToken) private idToListedToken;
+    mapping(uint256 => ListedToken) private idFromListedToken;
 
     constructor() ERC721("NFTMarketplace", "NFTM") {
         owner = payable(msg.sender);
     }
 
-    // functions
+    //main functions
+    function createToken(
+        string memory tokenURI,
+        uint256 price
+    ) public payable returns (uint256) {}
+
+    // Helper functions
 
     function updateListedPrice(uint256 _listingPrice) public payable {
         require(
@@ -45,5 +51,24 @@ contract NFTMarketplace is ERC721URIStorage {
 
     function getListedPrice() public view returns (uint256) {
         return listingPrice;
+    }
+
+    // this function fetchs the latest information from the latest NFT minted
+    function getLatestIdFromListedToken()
+        public
+        view
+        returns (ListedToken memory)
+    {
+        uint256 currentTokenId = _tokenIds.current();
+        return idFromListedToken[currentTokenId];
+    }
+
+    // this functions fetchs the NFT accordingly with the provided id
+    function getListedTokenFromId(
+        uint256 tokenId
+    ) public view returns (ListedToken memory) {}
+
+    function getCurrentToken() public view returns (uint256) {
+        return _tokenIds.current();
     }
 }
