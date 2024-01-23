@@ -83,6 +83,34 @@ contract NFTMarketplace is ERC721URIStorage {
         return tokens;
     }
 
+    function getMyNFTs() public view returns (ListedToken[] memory) {
+        uint totalItemCount = _tokenIds.current();
+        uint itemCount = 0;
+        uint currentIndex = 0;
+
+        //Important to get a count of all the NFTs that belong to the user before we can make an array for them
+        for (uint i = 0; i < totalItemCount; i++) {
+            if (
+                idToListedToken[i + 1].owner == msg.sender ||
+                idToListedToken[i + 1].seller == msg.sender
+            ) {
+                itemCount += 1;
+            }
+        }
+
+        //Once you have the count of relevant NFTs, create an array then store all the NFTs in it
+        ListedToken[] memory items = new ListedToken[](itemCount);
+        //now to make a display of all the NFTs that the user owns and fetch it in the array, we need to go through it
+        for (uint i = 0; i < totalItemCount; i++) {
+            uint currentId = i + 1;
+            ListedToken storage currentItem = idToListedToken[currentId];
+            items[currentIndex] = currentItem;
+            currentIndex += 1;
+        }
+
+        return items;
+    }
+
     // Helper functions
 
     function updateListedPrice(uint256 _listingPrice) public payable {
