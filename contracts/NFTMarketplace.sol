@@ -37,19 +37,35 @@ contract NFTMarketplace is ERC721URIStorage {
         string memory tokenURI,
         uint256 price
     ) public payable returns (uint256) {
-        require(
-            msg.value == listingPrice,
-            "Paid value is not the listing value"
-        );
-        require(price > 0, "Price can't be negative");
-
         _tokenIds.increment();
         uint256 newTokenId = _tokenIds.current();
         _safeMint(msg.sender, newTokenId);
 
         _setTokenURI(newTokenId, tokenURI);
 
+        //Helper function to update Global variables and emit an event
+        listCreatedToken(newTokenId, price);
+
         return newTokenId;
+    }
+
+    function listCreatedToken(uint256 tokenId, uint256 price) private {
+        require(
+            msg.value == listingPrice,
+            "Paid value is not the listing value"
+        );
+        require(price > 0, "Price can't be negative");
+
+        //Update the mapping of tokenId's to Token details, useful for retrieval functions
+        idFromListedToken[tokenId] = ListedToken(
+            tokenId,
+            payable(address(this)),
+            payable(msg.sender),
+            price,
+            true
+        );
+
+        _transfer(msg.sender, address(this), tokenId);
     }
 
     // Helper functions
