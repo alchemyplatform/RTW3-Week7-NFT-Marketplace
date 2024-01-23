@@ -26,7 +26,7 @@ contract NFTMarketplace is ERC721URIStorage {
         bool currentlyListed;
     }
 
-    mapping(uint256 => ListedToken) private idFromListedToken;
+    mapping(uint256 => ListedToken) private idToListedToken; //mapping of token ids for listed tokens(NFTs)
 
     constructor() ERC721("NFTMarketplace", "NFTM") {
         owner = payable(msg.sender);
@@ -57,7 +57,7 @@ contract NFTMarketplace is ERC721URIStorage {
         require(price > 0, "Price can't be negative");
 
         //Update the mapping of tokenId's to Token details, useful for retrieval functions
-        idFromListedToken[tokenId] = ListedToken(
+        idToListedToken[tokenId] = ListedToken(
             tokenId,
             payable(address(this)),
             payable(msg.sender),
@@ -66,6 +66,17 @@ contract NFTMarketplace is ERC721URIStorage {
         );
 
         _transfer(msg.sender, address(this), tokenId);
+    }
+
+    function getAllNFTs() public view returns (ListedToken[] memory) {
+        uint NFTCount = _tokenIds.current();
+        ListedToken[] memory tokens = new ListedToken[](NFTCount);
+        currentIndex = 0;
+
+        for (uint i = 0; i < NFTCount; i++) {
+            uint256 currentId = i + 1;
+            ListedToken storage cu
+        }
     }
 
     // Helper functions
@@ -84,17 +95,17 @@ contract NFTMarketplace is ERC721URIStorage {
     }
 
     // this function fetchs the latest information from the latest NFT minted
-    function getLatestIdFromListedToken()
+    function getLatestIdToListedToken()
         public
         view
         returns (ListedToken memory)
     {
         uint256 currentTokenId = _tokenIds.current();
-        return idFromListedToken[currentTokenId];
+        return idToListedToken[currentTokenId];
     }
 
     // this functions fetchs the NFT accordingly with the provided id
-    function getListedTokenFromId(
+    function getListedTokenToId(
         uint256 tokenId
     ) public view returns (ListedToken memory) {}
 
